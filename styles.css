@@ -1,13 +1,6 @@
 :root {
-    --leftS-width: 30%;
-    --leftS-element-height: 60px;
-    --rightS-background-color: rgba(229, 226, 226, 0.616);
-    --rightS-background-color2: white;
-    --rightS-width: 100%;
-    --rightS-height: 35%; 
-    --height: 100%;
-    --rightS-marL: 25px;
-
+    --rightSideHeight: calc(100vh / 3);
+    --rightSideBackgroundColor: rgba(229, 226, 226, 0.616);
 }
 
 
@@ -28,145 +21,129 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
+}
+
+* {
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+.content {
     display: flex;
-    
+    width: 100vw;
+    height: 100vh;
 }
 
-/* LEFT SIDE */
-
-.left-side {
-    display: flex;
-    width: var(--leftS-width);
-    height: calc(100vh - 1px);
-
+/* Left side */
+.left {
+    height: 100vh;
+    width: 35vw;
+    background-image: url(./images/photo-1585202900225-6d3ac20a6962.jpeg);
+    background-position: center;
+    background-size: 100%;
 }
 
-.left-side .background-image {
-    height: 100%;
-    width: 100%;   
-
-}
-
-.logo {
+.left .logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    width: calc(var(--leftS-width) - 1%);
-    height: 8rem;
-    top: 8rem;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.2);
-    gap: 12px;
-
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.45);
+    position: relative;
+    top: 20vh;
+    gap: 16px;
+    padding: 15px 0;
 }
 
-.logo .logo-img {
-    height: calc(50px + var(--leftS-element-height));
+.left .logo .logo-img {
+    height: 100%;
     width: auto;
 }
 
-.logo p {
-    font-size: var(--leftS-element-height);
-
+.left .logo h1{
+    color: white;
+    font-size: 85px;
 }
 
-/* RIGHT SIDE */
+/* Right side */
 
-.right-side {
+.right {
     display: flex;
     flex-direction: column;
-    width: calc(100% - var(--leftS-width));
-
+    width: 65vw;
+    gap: 8px;
 }
 
-
-.header, footer {
-    background-color: var(--rightS-background-color);
-    width: var(--rightS-width);
-    height: var(--rightS-height);
-    padding: 12px;
+.right .container, .right .footer {
+    background-color: var(--rightSideBackgroundColor);
+    height: var(--rightSideHeight);
 }
 
-/* Form */
-.right-side form{
-    padding: 16px;
-    box-shadow: 10px 5px 5px black;
+.right .header, .right .footer, .right form, .right .title{
+    padding-left: 30px;
 }
 
-fieldset {
+.right .container{
     display: flex;
-    flex-wrap: wrap;
-    margin-right: 20%;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    margin-left: var(--rightS-marL);
+    align-items: flex-end;
 }
 
-legend {
-    margin-left: 40px;
+.right .header {
+    width: 85%;
+    font-weight: 500;
+    font-size: 20px;
+
+}
+
+.right .header .bottom-text {
+    margin: 20px 0;
+}
+
+.right .secondContainer{
+    box-shadow: 10px 5px 5px black;
+    font-size: medium;
+
+}
+
+.right .secondContainer .title {
     font-weight: bold;
     font-size: larger;
 }
 
-.right-side form {
-    height: calc(100% - var(--rightS-height) * 2);
-    background-color: var(--rightS-background-color2);
+.right form {
+    height: var(--rightSideHeight);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 30px;
+    padding-bottom: 40px;
+    
 }
 
-.right-side .input-box {
+.right form .input-box {
     width: calc(100% / 2 - 80px);
-    font-size: small;
 }
 
-.right-side .input-box input:focus {
-    border: 3px solid blue;
-}
-
-
-.right-side .input-box input{
+.right form .input-box input{
     height: 30px;
     width: 100%;
     margin-top: 4px;
 }
 
-/* Header */
-.header {
-    display: flex;
-    font-size: larger;
-    font-weight: bold;
-    align-items: center;
+.right form .input-box input:focus {
+    border: 3px solid blue;
 }
 
-.header p {
-    margin-left: 68px;
-    margin-top: 20px;
+.right .footer {
+    padding-top: 30px;
 }
 
-/* Footer */
-footer {
-    
-}
-
-footer .container {
-    margin-top: 20px;
-    margin-left: 68px;
-}
-
-footer button {
+.right .footer button {
     color: white;
     background-color:  #596D48;
     padding: 10px 36px;
     font-weight: bold;
     border-radius: 10px;
     border: none;
-    margin-bottom: 8px;
+    margin-bottom: 30px;
 }
-
